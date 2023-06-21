@@ -23,7 +23,10 @@ provider = myFirstHook
 path = /hana/shared/myHooks
 execution_order = 5
 
+4) create the directory /srhook, writable by <sid>adm
+
 please see documentation on HANA hooks here:
+https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/1367c8fdefaa4808a7485b09815ae0f3.html?version=2.0.01
 """
 fhSRHookVersion = "0.162.0"
 
@@ -62,7 +65,7 @@ try:
             ***this is strictly a sample, and you will need to implement your own ***
             ***logic here***
             """
-            with open('/abbas/readme.txt', 'a') as f:
+            with open('/srhook/readme.txt', 'a') as f:
                 f.write("HANA failed over to secondary node")
                 f.write('\n')
             return 0
